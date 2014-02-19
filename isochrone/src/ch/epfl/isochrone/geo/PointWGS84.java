@@ -13,7 +13,7 @@ public final class PointWGS84 {
     private final double latitude;
     final double rayonTerre = 6378137;
 
-    public  PointWGS84(double longitude, double latitude) {
+    public  PointWGS84(double longitude, double latitude) throws IllegalArgumentException {
 
         //Check longitude et latitude
         if(longitude < -PI || longitude > PI) {
