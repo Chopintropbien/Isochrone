@@ -1,5 +1,6 @@
 package ch.epfl.isochrone;
 
+
 import static java.lang.Math.log;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.pow;
