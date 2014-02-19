@@ -3,8 +3,10 @@ package ch.epfl.isochrone.geo;
 import static java.lang.Math.PI;
 import static java.lang.Math.asin;
 import static java.lang.Math.cos;
+import static java.lang.Math.tan;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.toDegrees;
+import static java.lang.Math.pow;
 import ch.epfl.isochrone.Math;
 
 public final class PointWGS84 {
@@ -41,7 +43,12 @@ public final class PointWGS84 {
     }
 
     PointOSM toOSM(int zoom) {
-        //TODO
+        double s = pow(2, zoom + 8);
+        
+        double x  = (longitude + PI) * s / (2 * PI);
+        double y = (PI -asin(tan(latitude))) * s / (2*PI); 
+        
+        return new PointOSM(zoom, x, y);
     }
 
     @Override
