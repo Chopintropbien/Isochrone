@@ -13,7 +13,7 @@ import static java.lang.Math.sin;
 public final class Math {
 
     /**
-     * Constructeur de la class Math. Afin que celle-ci ne puisse etre instanciee, celui-ci est private
+     * Constructeur de la class Math. Afin que celle-ci ne puisse etre instanciee, celui-ci est private.
      */
     private Math(){    
     }
