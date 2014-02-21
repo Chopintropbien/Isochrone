@@ -1,4 +1,4 @@
-package ch.epfl.isochrone;
+package ch.epfl.isochrone.math;
 
 
 import static java.lang.Math.log;

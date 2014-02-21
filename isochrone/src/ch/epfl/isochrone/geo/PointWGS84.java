@@ -7,7 +7,7 @@ import static java.lang.Math.tan;
 import static java.lang.Math.sqrt;
 import static java.lang.Math.toDegrees;
 import static java.lang.Math.pow;
-import ch.epfl.isochrone.Math;
+import ch.epfl.isochrone.math.Math;
 
 public final class PointWGS84 {
 
@@ -29,20 +29,20 @@ public final class PointWGS84 {
         this.latitude = latitude;
     }
 
-    double longitude() {
+    public double longitude() {
         return longitude;
     }
 
-    double latitude() {
+    public double latitude() {
         return latitude;
     }
 
-    double distanceTo(PointWGS84 that) {
+    public double distanceTo(PointWGS84 that) {
         double tempCalcul = Math.haversin(latitude - that.latitude()) + cos(latitude) * cos(that.latitude()) * Math.haversin(longitude - that.longitude());
         return 2 * rayonTerre * asin(sqrt(tempCalcul));
     }
 
-    PointOSM toOSM(int zoom) {
+    public PointOSM toOSM(int zoom) {
         double s = pow(2, zoom + 8);
         
         double x  = (longitude + PI) * s / (2 * PI);
