@@ -42,7 +42,12 @@ public final class PointWGS84 {
         return 2 * rayonTerre * asin(sqrt(tempCalcul));
     }
 
-    public PointOSM toOSM(int zoom) {
+    public PointOSM toOSM(int zoom) throws IllegalArgumentException {
+        
+        if(zoom < 0) {
+            throw new IllegalArgumentException("Zoom negatif !");
+        }
+        
         double s = pow(2, zoom + 8);
         
         double x  = (longitude + PI) * s / (2 * PI);
